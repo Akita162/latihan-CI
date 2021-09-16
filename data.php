@@ -1,4 +1,5 @@
 <?php
+
 if (!empty($_POST)) {
     $nama = $_POST['nama'];
     $alamat = $_POST['alamat'];
