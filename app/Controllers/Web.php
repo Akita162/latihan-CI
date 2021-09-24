@@ -12,6 +12,7 @@ class Web extends BaseController
     {
         parent::initController($request, $response, $logger);
     }
+
     public function index()
     {
         $data['judul'] = 'Halaman Depan';
