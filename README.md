@@ -2,13 +2,13 @@
 
 ## Tugas Web Programming II :
 
-1. ### Pertemuan 2:
+### 1. Pertemuan 2:
 
 - File [Controllers\Latihan1](./app/Controllers/Latihan1.php).
 - File [Models\Model_latihan1](./app/Models/Model_latihan1.php).
 - File [Views\view-latihan1](./app/Views/view-latihan.php).
 
-2. ### Pertemuan 3:
+### 2. Pertemuan 3:
 
 - File [Controllers\Web](./app/Controllers/Web.php).
 - File [Views\v-header](./app/Views/v-header.php).
