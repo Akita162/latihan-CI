@@ -1,3 +1,4 @@
+<!-- Views\view-form-matakuliah -->
 <html>
 
 <head>
@@ -21,7 +22,7 @@
                     <th>Kode MTK</th>
                     <th>:</th>
                     <td>
-                        <input type="text" name="kode" id="kode">
+                        <input type="text" name="kode" id="kode" value="<?= old('kode') ?>">
                         <?= ($validation->hasError('kode')) ? '<br>' . $validation->getError('kode') : '' ?>
                     </td>
                 </tr>
@@ -29,7 +30,7 @@
                     <th>Nama MTK</th>
                     <td>:</td>
                     <td>
-                        <input type="text" name="nama" id="nama">
+                        <input type="text" name="nama" id="nama" value="<?= old('nama') ?>">
                         <?= ($validation->hasError('nama')) ? '<br>' . $validation->getError('nama') : '' ?>
                     </td>
                 </tr>
