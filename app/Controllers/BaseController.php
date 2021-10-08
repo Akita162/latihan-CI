@@ -7,6 +7,7 @@ use CodeIgniter\HTTP\CLIRequest;
 use CodeIgniter\HTTP\IncomingRequest;
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
+use Config\Validation;
 use Psr\Log\LoggerInterface;
 
 /**
@@ -35,7 +36,7 @@ class BaseController extends Controller
      *
      * @var array
      */
-    protected $helpers = [];
+    protected $helpers = ['url'];
 
     /**
      * Constructor.
@@ -48,6 +49,10 @@ class BaseController extends Controller
         // Preload any models, libraries, etc, here.
 
         // E.g.: $this->session = \Config\Services::session();
-        session();
+        $this->session = \Config\Services::session();
+        $this->validation = \Config\Services::validation();
+        $db = $this->db = \Config\Database::connect();
+        $this->ModelUser = model('ModelUser', true, $db);
+        $this->ModelBuku = model('ModelBuku', true, $db);
     }
 }

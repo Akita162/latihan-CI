@@ -6,8 +6,6 @@ use CodeIgniter\Model;
 
 class Model_latihanl extends Model
 {
-    public $nilai1, $nilai2, $hasil;
-
     public function jumlah($n1 = null, $n2 = null)
     {
         $this->nilai1 = $n1;
