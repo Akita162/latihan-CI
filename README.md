@@ -22,10 +22,21 @@
 - View [view-form-matakuliah.php](./app/Views/view-form-matakuliah.php).
 - View [view-data-matakuliah.php](./app/Views/view-data-matakuliah.php).
 
-### 3. Pertemuan 5:
+### 4. Pertemuan 5:
 
 - Setting Base URL di [Config\App](./app/Config/App.php).
 - Menambahkan Library, Helper, dan akses Model di [BaseController.php](./app/Controllers/BaseController.php).
 - Mengatur koneksi database di [Config\Database](./app/Config/Database.php).
 - Model [ModelUser.php](./app/Models/ModelUser.php).
 - Model [ModelBuku.php](./app/Models/ModelBuku.php).
+
+### 5. Pertemuan 6:
+
+- Model [DbSepatuIsh.php](./app/Models/DbSepatuIsh.php).
+- View [input-sepatu.php](./app/Views/input-sepatu.php).
+- View [output-sepatu.php](./app/Views/output-sepatu.php).
+- Controller [Sepatu.php](./app/Controllers/Sepatu.php).
+
+# Note To Self:
+
+CodeIgniter4 Doesn't need "defined('BASEPATH') or exit('No direct access allowed.');" in the MVC.

@@ -11,7 +11,7 @@
   <!-- jquery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-  <title>Web Prog II | Merancang Template Sederhana dengan CodeIgniter</title>
+  <title><?= $title ?></title>
 </head>
 
 <body>

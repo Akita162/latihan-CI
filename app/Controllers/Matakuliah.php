@@ -6,14 +6,12 @@ class Matakuliah extends BaseController
 {
     public function index()
     {
-        $data = ['validation' => \Config\Services::validation()];
+        $data = $this->validation;
         return view('view-form-matakuliah', $data);
     }
 
     public function cetak()
     {
-        $validation = \Config\Services::validation();
-
         if (!$this->validate([
             'kode' => [
                 'rules' => 'required|min_length[3]',
@@ -30,7 +28,7 @@ class Matakuliah extends BaseController
                 ]
             ],
         ])) {
-            return redirect()->to('Matakuliah/')->withInput()->with('validation', $validation);
+            return redirect()->to('Matakuliah/')->withInput()->with('validation', $this->validation);
         } else {
             $data = [
                 'kode' => $this->request->getPost('kode'),

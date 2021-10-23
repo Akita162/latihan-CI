@@ -17,6 +17,7 @@ class Web extends BaseController
     public function index()
     {
         $data['judul'] = 'Halaman Depan';
+        $data['title'] = 'Web Prog II | Merancang Template Sederhana dengan CodeIgniter';
         // 1 view use return, many views use echo
         return view('v-header', $data) . view('v-index', $data) . view('v-footer', $data);
     }
