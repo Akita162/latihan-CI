@@ -2,15 +2,10 @@
 
 namespace App\Controllers;
 
-use CodeIgniter\HTTP\RequestInterface;
-use CodeIgniter\HTTP\ResponseInterface;
-use Psr\Log\LoggerInterface;
-
 class Sepatu extends BaseController
 {
-    public function initController(RequestInterface $request, ResponseInterface $response, LoggerInterface $logger)
+    public function __construct()
     {
-        parent::initController($request, $response, $logger);
         $this->shoes = new \App\Models\DbSepatuIsh();
     }
 
@@ -19,7 +14,7 @@ class Sepatu extends BaseController
         $data['sepatu'] = $this->shoes->getSepatu();
         $data['size'] = $this->shoes->getSize();
         $data['validation'] = $this->validation;
-        return view('input-sepatu', $data);
+        return view('sepatu/input-sepatu', $data);
     }
 
     public function cetak()
@@ -52,7 +47,7 @@ class Sepatu extends BaseController
                 ]
             ],
         ])) {
-            return redirect()->to('Sepatu')->withInput()->with('validation', $this->validation);
+            return redirect()->to('Sepatu')->withInput();
         } else {
             $id = $this->request->getPost('id_sepatu');
             $sepatu = $this->shoes->getSepatu();
@@ -62,7 +57,7 @@ class Sepatu extends BaseController
                 'sepatu' => $sepatu[$id],
                 'ukuran' => $this->request->getPost('ukuran')
             ];
-            return view('output-sepatu', $data);
+            return view('sepatu/output-sepatu', $data);
         }
     }
 }

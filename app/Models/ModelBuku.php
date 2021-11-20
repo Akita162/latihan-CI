@@ -6,14 +6,13 @@ use CodeIgniter\Model;
 
 class ModelBuku extends Model
 {
+    protected $table = 'buku';
     // manajemen buku
-    public function getBuku()
+    public function getBuku($where = false)
     {
-        return $this->db->table('buku')->get();
-    }
-
-    public function bukuWhere($where)
-    {
+        if ($where == false) {
+            return $this->findAll();
+        }
         return $this->db->table('buku')->getWhere($where);
     }
 
@@ -42,12 +41,11 @@ class ModelBuku extends Model
     }
 
     // manajemen kategori
-    public function getKategori()
+    public function getKategori($where = false)
     {
-        return $this->db->table('kategori')->get();
-    }
-    public function kategoriWhere($where)
-    {
+        if ($where == false) {
+            return $this->db->table('kategori')->get();
+        }
         return $this->db->table('kategori')->getWhere($where);
     }
     public function simpanKategori($data = null)
@@ -66,11 +64,10 @@ class ModelBuku extends Model
     // join
     public function joinKategoriBuku($where)
     {
-        $buku = $this->db->table('buku')
+        return $this->db->table('buku')
             ->select('buku.id_kategori,kategori.kategori')
             ->join('kategori', 'kategori.id = buku.id_kategori')
             ->where($where)
             ->get();
-        return $buku;
     }
 }

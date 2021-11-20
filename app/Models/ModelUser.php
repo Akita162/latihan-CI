@@ -6,32 +6,27 @@ use CodeIgniter\Model;
 
 class ModelUser extends Model
 {
+    protected $table = 'user';
     public function simpanData($data = null)
     {
         $this->db->table('user')->insert($data);
     }
-    public function cekData($where = null)
+
+    public function getUser($where = false)
     {
+        if ($where == false) {
+            return $this->findAll();
+        }
         return $this->db->table('user')->getWhere($where);
     }
-    public function getUserWhere($where = null)
-    {
-        return $this->db->table('user')->getWhere($where);
-    }
+
     public function cekUserAccess($where = null)
     {
-        $access = $this->db->table('access_menu')
-            ->select('*')
-            ->where($where)
-            ->get();
-        return $access;
+        return $this->db->table('access_menu')->getWhere($where);
     }
-    public function getUserLimit()
+
+    public function getUserLimit($limit = 10, $offset = 0)
     {
-        $user = $this->db->table('user')
-            ->select('*')
-            ->limit(10, 0)
-            ->get();
-        return $user;
+        return $this->findAll($limit, $offset);
     }
 }

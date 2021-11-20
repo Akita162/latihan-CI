@@ -6,8 +6,8 @@ class Matakuliah extends BaseController
 {
     public function index()
     {
-        $data = $this->validation;
-        return view('view-form-matakuliah', $data);
+        $data['validation'] = $this->validator;
+        return view('matkul/view-form-matakuliah', $data);
     }
 
     public function cetak()
@@ -28,14 +28,14 @@ class Matakuliah extends BaseController
                 ]
             ],
         ])) {
-            return redirect()->to('Matakuliah/')->withInput()->with('validation', $this->validation);
+            return redirect()->to('Matakuliah/')->withInput();
         } else {
             $data = [
                 'kode' => $this->request->getPost('kode'),
                 'nama' => $this->request->getPost('nama'),
                 'sks' => $this->request->getPost('sks')
             ];
-            return view('view-data-matakuliah', $data);
+            return view('matkul/view-data-matakuliah', $data);
         }
     }
 }
