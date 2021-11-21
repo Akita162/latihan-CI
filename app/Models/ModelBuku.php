@@ -11,7 +11,7 @@ class ModelBuku extends Model
     public function getBuku($where = false)
     {
         if ($where == false) {
-            return $this->findAll();
+            return $this->db->table('buku')->get();
         }
         return $this->db->table('buku')->getWhere($where);
     }

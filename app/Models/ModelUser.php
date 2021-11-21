@@ -15,7 +15,7 @@ class ModelUser extends Model
     public function getUser($where = false)
     {
         if ($where == false) {
-            return $this->findAll();
+            return $this->db->table('user')->get();
         }
         return $this->db->table('user')->getWhere($where);
     }
@@ -27,6 +27,6 @@ class ModelUser extends Model
 
     public function getUserLimit($limit = 10, $offset = 0)
     {
-        return $this->findAll($limit, $offset);
+        return $this->db->table('user')->get($limit, $offset);
     }
 }
