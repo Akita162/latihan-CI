@@ -16,7 +16,7 @@
             <div class="col mr-2">
               <div class="text-md font-weight-bold text-white text-uppercase mb-1">Jumlah Anggota</div>
               <div class="h1 mb-0 font-weight-bold text-white">
-                <?= $this->ModelUser->getUser(['role_id' => 1])->getNumRows() ?>
+                <?= $modelUser->getUser(['role_id' => 1])->getNumRows() ?>
               </div>
             </div>
             <div class="col-auto">
@@ -34,7 +34,7 @@
             <div class="col mr-2">
               <div class="text-md font-weight-bold text-white text-uppercase mb-1">Stok Buku Terdaftar</div>
               <div class="h1 mb-0 font-weight-bold text-white">
-                <?= $this->ModelBuku->total('stok', ['stok != 0']) ?>
+                <?= $modelBuku->total('stok', ['stok != 0']) ?>
               </div>
             </div>
             <div class="col-auto">
@@ -54,7 +54,7 @@
               <div class="row no-gutters align-items-center">
                 <div class="col-auto">
                   <div class="h1 mb-0 font-weight-bold text-white">
-                    <?= $this->ModelBuku->total('dipinjam', ['dipinjam != 0']) ?>
+                    <?= $modelBuku->total('dipinjam', ['dipinjam != 0']) ?>
                   </div>
                 </div>
               </div>
@@ -73,7 +73,7 @@
           <div class="row no-gutters align-items-center">
             <div class="col mr-2">
               <div class="text-md font-weight-bold text-white text-uppercase mb-1">Buku yang dibooking</div>
-              <div class="h1 mb-0 font-weight-bold text-white"><?= $this->ModelBuku->total('dibooking', ['dibooking != 0']) ?></div>
+              <div class="h1 mb-0 font-weight-bold text-white"><?= $modelBuku->total('dibooking', ['dibooking != 0']) ?></div>
             </div>
             <div class="col-auto">
               <a href="user"><i class="fas fa-shopping-cart fa-3x text-danger" aria-hidden="true"></i></a>

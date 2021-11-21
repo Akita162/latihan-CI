@@ -31,7 +31,7 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Autentifikasi::index');
+$routes->get('/', 'Home::index');
 
 // Making new behaviour
 $routes->add('/mYcUsToMuRl/(:any)', 'Mycontroller::myMethod/$1');

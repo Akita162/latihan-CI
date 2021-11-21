@@ -19,6 +19,8 @@ class Admin extends BaseController
             ->getUserLimit()
             ->getResultArray();
         $data['buku'] = $this->ModelBuku->getBuku()->getResultArray();
+        $data['modelUser'] = $this->ModelUser;
+        $data['modelBuku'] = $this->ModelBuku;
 
         return view('pustaka/admin/index', $data);
     }
