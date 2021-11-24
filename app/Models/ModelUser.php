@@ -7,9 +7,15 @@ use CodeIgniter\Model;
 class ModelUser extends Model
 {
     protected $table = 'user';
+
     public function simpanData($data = null)
     {
         $this->db->table('user')->insert($data);
+    }
+
+    public function updateData($data = null, $where = false)
+    {
+        $this->db->table('user')->update($data, $where);
     }
 
     public function getUser($where = false)

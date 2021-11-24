@@ -7,6 +7,7 @@ use CodeIgniter\Model;
 class ModelBuku extends Model
 {
     protected $table = 'buku';
+
     // manajemen buku
     public function getBuku($where = false)
     {

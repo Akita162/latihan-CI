@@ -37,7 +37,7 @@ $routes->get('/', 'Home::index');
 $routes->add('/mYcUsToMuRl/(:any)', 'Mycontroller::myMethod/$1');
 // (:blah) and $1,$2,... is a placeholder if user try to access anything through url with specific condition
 // on this case: without method
-// PLACEHOLDER: (:alpha) (:num) (:any){alhpanumeric} (:segment){ALL (weird char included) except '/'}
+// PLACEHOLDER: (:alpha) (:num) (:any){alhpanumeric} (:segment){ALL of weird char included, except '/'}
 $routes->post('/posturl', function () {
     // this is called CLOSURES / anonymous function, it's used when you don't need controller or method
     echo "This is an instant page";
